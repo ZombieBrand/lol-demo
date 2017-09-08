@@ -52,12 +52,20 @@ $(function() {
     current = nextcurrent
   }
   var timer = setInterval(autoPlay, 4000)
-  $('.carouseltop').mouseenter(function(event) {
+  $('.carouseltop').mouseenter(function() {
     clearInterval(timer)
   });
-  $('.carouseltop').mouseleave(function(event) {
+  $('.promo-trigger>span').mouseleave(function() {
     clearInterval(timer)
+    current = $('.promo-trigger>span').index(this);
     timer = setInterval(autoPlay, 4000)
+    console.log(this)
+  });
+  $('.photoul>li').mouseleave(function() {
+    clearInterval(timer)
+    current = $('.photoul>li').index(this);
+    timer = setInterval(autoPlay, 4000)
+    console.log(this)
   });
 
   /*carouselmiddle Tab组件*/
