@@ -31,7 +31,6 @@ $(function() {
     let $span = $(e.currentTarget)
     let $index = $span.index()
     go($index)
-    clearInterval(timer)
   })
 
   function go(index) {
@@ -53,10 +52,10 @@ $(function() {
     current = nextcurrent
   }
   var timer = setInterval(autoPlay, 4000)
-  $('.promo-trigger>span').mouseenter(function(event) {
+  $('.carouseltop').mouseenter(function(event) {
     clearInterval(timer)
   });
-  $('.promo-trigger>span').mouseleave(function(event) {
+  $('.carouseltop').mouseleave(function(event) {
     clearInterval(timer)
     timer = setInterval(autoPlay, 4000)
   });
